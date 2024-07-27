@@ -1,5 +1,47 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.root {
+  margin-top: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .container {
   display: flex;
   justify-content: center;
 }
 
+.form-container {
+  width: 50vw;
+}
+ .login-container {
+  padding: 12px;
+  width: 30vw;
+ } 
+ .login-container form {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.login-container form > *:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.form-container form {
+  display: flex;
+  width: 40vw;
+  height: 100vh;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-container form > *:not(:last-child) {
+  margin-bottom: 16px;
+}
+.root > *:not(:last-child) {
+  margin-bottom: 16px;
+}

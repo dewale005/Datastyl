@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 axios.interceptors.request.use(
@@ -6,12 +6,12 @@ axios.interceptors.request.use(
     if (!request.headers.Authorization) {
       const token = localStorage ? localStorage.getItem('token') : null;
       if (token) {
-        request.headers.Authorization = token;
+        request.headers.Authorization = `Bearer ${token}`;
       }
     }
     return request;
   },
-  (error) => Promise.reject(error),
+  (error: AxiosError) => Promise.reject(error),
 );
 
 export default axios;
